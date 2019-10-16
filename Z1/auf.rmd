@@ -1,0 +1,15 @@
+---
+title: Uebungsblatt 00
+author: Truong (Hoang Tung Truong, 3080216), Testfran (Minh Kien Nguyen, 3157116)
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb}
+---
+
+## Aufgabe 1
+a. Wenn ich Schuhe kaufe, kaufe ich auch eine Hose
+b. Die Schlussfolgerung ist richtig
+c. Die Schlussfolgerung ist richtig
+d. $\neg (\forall x.(SF(x) \rightarrow \exists y.(DF(y) \land hasst(x,y))))$
+e. $\forall m \in \mathbb{N} . \exists n \in \mathbb{N} . m < n \land \forall x \in \mathbb{N} . \forall y \in \mathbb{N} . x.y = n \rightarrow x = 1 \lor y = 1$
+f. $\forall x . \exists y . (x \in \mathbb{R} \rightarrow ( y \in \mathbb{C} \land y . y = x))$

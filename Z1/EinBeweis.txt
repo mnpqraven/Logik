@@ -1,0 +1,11 @@
+Beweis für: ∃y.∀x.R(x,y) → ∀u.∃v.R(u,v)
+
+{ assume ∃y.∀x.R(x,y)
+   var v := ϵy.∀x.R(x,y)		//  v sei ein y mit ∀x.R(x,y)
+   assert ∀x.R(x,v)		// (*)  wg Wahl von v
+   var u           		// sei u beliebig
+   assert R(u,v)   		// wg (*) für x=u
+   assert ∃v.R(u,v)
+   assert ∀u.∃v.R(u,v)
+}
+assert ∃y.∀x.R(x,y) → ∀u.∃v.R(u,v)

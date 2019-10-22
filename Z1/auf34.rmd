@@ -1,0 +1,40 @@
+---
+title: Uebungsblatt 01
+author: Truong (Hoang Tung Truong, 3080216), Testfran (Minh Kien Nguyen, 3157116)
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb}
+---
+
+## Aufgabe 3
+a.
+
+$A \leftrightarrow A \land B \land C \land D$
+
+$B \leftrightarrow
+(A \land \neg B \land \neg C \land \neg D) \lor
+(\neg A \land B \land \neg C \land \neg D) \lor
+(\neg A \land \neg B \land C \land \neg D) \lor
+(\neg A \land \neg B \land \neg C \land D)$
+
+$C \leftrightarrow
+(\neg D \land \neg C) \lor (\neg D \land \neg B) \lor (\neg D \land \neg A) \lor (\neg C \land \neg B) \lor (\neg C \land \neg A) \lor (\neg B \land \neg A)$
+
+$D \leftrightarrow
+\neg A \land \neg B$
+
+b.
+
+|Aussage|true|false|
+|-|-|-|
+|A| | x|
+|B| | x|
+|C|x| |
+|D|x| |
+
+## Aufgabe 4
+a. $\exists x.istStudent(x) \rightarrow \forall y.(istAufgabe(y) \rightarrow bearbeitet(x,y))$
+
+b. $\forall x.istStudent(x) \rightarrow \forall y.((istAufgabe(y) \land gibtKeinePunkte(y)) \rightarrow \neg bearbeitet(x.y))$
+c. $\exists y.istAufgabe(y) \rightarrow \forall x.((istStudent(x) \land bearbeitet(x,y)) \rightarrow bekommtVollePunkte(x,y))$
+d. $\forall y.istAufgabe(y) \rightarrow \exists x.(istStudent(x) \land bearbeitet(x,y) \rightarrow bekommtVollePunkte(x,y))$

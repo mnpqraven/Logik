@@ -1,0 +1,108 @@
+
+---
+title: Uebungsblatt 02
+author: Truong (Hoang Tung Truong, 3080216), Testfran (Minh Kien Nguyen, 3157116)
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb}
+---
+
+## Aufgabe 3
+a.
+Sei $T(Fm)$ Schachtelungstiefe einer Formel $Fm$:
+
+1. $T(Fm):=0$ Falls Fm eine atomare Formel ist
+2. $T(Fm):=1 + Max(T(Fm_1),T(Fm_2))$ falls\
+   $Fm = (Fm_1 \lor Fm_2)$ oder\
+   $Fm = (Fm_1 \land Fm_2)$ oder\
+   $Fm = (Fm_1 \rightarrow Fm_2)$ oder\
+   $Fm = (Fm_1 \leftrightarrow Fm_2)$ oder\
+3. $T(Fm) := T(Fm_1)$ falls\
+   $Fm = \neg Fm_1$
+
+b.
+**Behauptung:** Die Anzahl der Klammern in einer aussagenlogischen Formel ist stets gerade Definiere für beliebige Formel $Fm$:\
+$K(Fm)=$ Anzahl der Klammern in der Formel Fm:
+
+1. $K(Fm):=0$ Falls Fm eine atomare Formel ist
+2. $K(Fm):=2 + Max(K(Fm_1),K(Fm_2))$ falls\
+   $Fm = (Fm_1 \lor Fm_2)$ oder\
+   $Fm = (Fm_1 \land Fm_2)$ oder\
+   $Fm = (Fm_1 \rightarrow Fm_2)$ oder\
+   $Fm = (Fm_1 \leftrightarrow Fm_2)$ oder\
+3. $K(Fm) := K(Fm_1)$ falls $Fm = \neg Fm_1$
+
+**Behauptung:** $\forall Fm$ gilt $2|K(Fm)$
+
+Hier $F(Fm):= (2|K(Fm))$
+
+**Beweis:**
+
+1. Ist $Fm = A$ atomar, dann gilt $K(A)=0$ und daraus $2|K(A)$, also es gilt $E(A)$
+
+   Annahme: Seien $Fm_1,Fm_2$ beliebige Formel
+
+   Es gelten $E(Fm_1)$ und $E(Fm_2)$ also $(2|K(Fm_1))$ und $(2|K(Fm_2))$
+2. Konsequenz
+   Für $Fm = Fm_1 \lor Fm_2$ gilt:
+
+$K(Fm) = 2 + K(Fm_1)+K(Fm_2)$
+
+Aus $2|2, 2|K(Fm_1)$ und $2|K(Fm_2)$ folgt $2|K(Fm)$, d.h es gilt $F(Fm_1 \lor Fm_2)$
+
+usw. mit $( \land ), ( \rightarrow )$ und $( \leftrightarrow )$
+
+3. Für $Fm = \neg Fm_1$ gilt $K(Fm = K(FM_1))$
+
+   Aus $2|K(Fm_1)$ folgt $2|K(Fm)$, d.h es gilt $E(Fm)$
+
+Also $\forall Fm$ gilt $2|K(Fm)$
+
+## Aufgabe 4
+
+**Behauptung:** Für alle $A \notin var(F)$ und jede Beleegung $\alpha$ gilt $\hat{\alpha}+[A \mapsto 0](F) = \hat{\alpha}(F)$
+
+**Beweis:**
+
+1. Ist $F = At$ atomar, dann gilt
+
+$RHS = \hat{\alpha(F)} = \hat{\alpha}(At) = \alpha(At)$
+
+$LHS = \hat{alpha}_{[A mapsto 0]}(F) = \hat{alpha}_{[A \mapsto 0]}(At)$
+
+$= \alpha_{[A \mapsto 0]}(At) = \alpha (At)$ (da $A \notin var(F) \Rightarrow A \neq At$)
+
+also $\hat{\alpha}_{[A \mapsto 0]}(At) = \hat{\alpha}(At)$
+
+Annahme: Seien $F_1, F_2$ beliebige Formel mit $A \notin var(F_1)$ und $A \notin var(F_2)$
+
+Es gelten $\hat{\alpha}_{[A \mapsto 0]}(F_1) = \hat{\alpha}(F_1)$ und $\hat{\alpha}_{[A \mapsto 0]}(F_2) = \hat{\alpha}(F_2)$
+
+2. Konsequenz
+- Für $F= F_1 \lor F_1$ gilt:
+  $LHS = \hat{\alpha}_{[A \mapsto 0]}(F) = \hat{\alpha}_{[A \mapsto 0]}(F_1 \lor F_2)$
+
+  $= \hat{\alpha}_{[A \mapsto 0]}(F_1) | \hat{\alpha}_{[A \mapsto 0]}(F_2)$
+
+  $= \hat{\alpha}(F_1) | \hat{\alpha}(F_2)$
+
+  $\hat{\alpha}(F_1 \lor F_2) = \hat{\alpha}(F) = RHS$
+- Für $\land (\rightarrow$ und $\leftrightarrow$ analog $)$
+
+  $LHS = \hat{\alpha}_{[A\mapsto 0]}(F_1 \land F2)$
+
+  $= \hat{\alpha}_{[A\mapsto 0]}(F_1) = \hat{\alpha}_{A\mapsto 0}(F_2)$
+
+  $\hat{\alpha}(F_1) = \hat{\alpha}(F_2)$
+
+  $= \hat{\alpha}(F_1 \land F_2) = \hat{\alpha}(F) = RHS$
+
+3. Für $F = \neg F_1$ gilt:
+
+  $LHS = \hat{\alpha}_{[A \mapsto 0]}(F) = \hat{\alpha}_{[A \mapsto 0]}(\neg F_1)$
+
+  $= !\hat{\alpha}_{[A \mapsto 0]}(F_1)$
+
+  $= !\hat{\alpha}(F_1) = 2(\neg F_1) = \hat{\alpha}(F) = RHS$
+
+  Also: Die Behauptung ist wahr

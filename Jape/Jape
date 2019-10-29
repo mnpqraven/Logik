@@ -1,0 +1,1 @@
+exec java -jar /home/othi/Documents/studium/Logik/Jape/Jape.jar -engine /home/othi/Documents/studium/Logik/Jape/jape_engine $@

@@ -7,6 +7,10 @@ header-includes:
    - \usepackage{amssymb}
 ---
 
+## Aufgabe 1 und 2
+
+\includegraphics{auf12.png}
+
 ## Aufgabe 3
 a.
 Sei $T(Fm)$ Schachtelungstiefe einer Formel $Fm$:
@@ -86,7 +90,7 @@ Es gelten $\hat{\alpha}_{[A \mapsto 0]}(F_1) = \hat{\alpha}(F_1)$ und $\hat{\alp
   $= \hat{\alpha}(F_1)$ $|$ $\hat{\alpha}(F_2)$
 
   $= \hat{\alpha}(F_1 \lor F_2) = \hat{\alpha}(F) = RHS$
-- Für $F = F_1$ \land $F_2$ gilt:
+- Für $F = F_1$ $\land$ $F_2$ gilt:
 
   $LHS = \hat{\alpha}_{[A\mapsto 0]}(F_1 \land F2)$
 

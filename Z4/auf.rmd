@@ -1,0 +1,38 @@
+
+---
+title: Uebungsblatt 04
+author: Truong (Hoang Tung Truong, 3080216), Testfran (Minh Kien Nguyen, 3157116), Hamdash
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb}
+---
+
+## Aufgabe 1
+
+Siehe näschte Seite
+
+![](1a.png){width=100%}
+
+![](1b.png){width=100%}
+
+## Aufgabe 2
+![](2.png){width=100%}
+
+## Aufgabe 3
+
+![](3a1){width=100%}
+
+![](3a2){width=100%}
+
+![](3b1){width=100%}
+
+![](3b2){width=100%}
+
+## Aufgabe 4 und 5
+
+![](45.png){width=100%}
+
+![](5c.png){width=100%}
+
+![](a5b.png){width=100%}
+

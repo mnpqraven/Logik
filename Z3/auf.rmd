@@ -13,7 +13,9 @@ $F \rightarrow G$ ist unerfüllbar
 
 genau dann wenn für alle passenden Belegungen $\alpha$ gilt $\hat{\alpha}(F \rightarrow G) = 0$
 
-genau dann wenn für alle passenden Belegungen $\alpha$ gilt $! \hat{\alpha}(F)$ $\hat{\alpha}(G) = 0$
+genau dann wenn für alle passenden Belegungen $\alpha$ gilt $\hat{\alpha}(\neg F \lor G) = 0$
+
+genau dann wenn für alle passenden Belegungen $\alpha$ gilt $! \hat{\alpha}(F)$ $|$ $\hat{\alpha}(G) = 0$
 
 genau dann wenn für alle passenden Belegungen $\alpha$ gilt $! \hat{\alpha}(F) = 0$ und $\hat{\alpha}(G) = 0$
 
@@ -28,7 +30,7 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 
    $= (A_1 \rightarrow A_2) \land A_3 \rightarrow ( \neg (A_1 \lor A_2) \lor \neg (A_1 \rightarrow A_2))$
 
-   $= (A_1 \rightarrow A_2) \land A_3 \rightarrow ( ( \neg A_1 \lor \neg A_2) \lor \neg (A_1 \rightarrow A_2))$
+   $= (A_1 \rightarrow A_2) \land A_3 \rightarrow ( ( \neg A_1 \land \neg A_2) \lor (A_1 \land \neg A_2))$
 
    $= (A_1 \rightarrow A_2) \land A_3 \rightarrow \neg A_2$
 
@@ -40,11 +42,11 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 
    $= \neg A_2 \lor \neg A_3$
 
-2. $\alpha (G_1) = (A_1 \rightarrow A_2)_{[_1/A_1, 0/A_2]} = 1 \rightarrow 0 = 0$
+2. $\alpha (G_1) = (A_1 \rightarrow A_2)_{[1/A_1, 0/A_2]} = 1 \rightarrow 0 = 0$
 
-   $= \alpha (G_2) = (A_1 \lor A_2)_{[1/A_1, 0/A_2]} = 1 \lor 0 = 1$
+   $\alpha (G_2) = (A_1 \lor A_2)_{[1/A_1, 0/A_2]} = 1 \lor 0 = 1$
 
-   $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} = [A_1 \mapsto 0, A_2 \mapsto 1, A_3 \mapsto 1]$
+   $\alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} = [A_1 \mapsto 0, A_2 \mapsto 1, A_3 \mapsto 1]$
 
 3. $\alpha (F_{[G_1/A_1, G_2/A_2]})$
 
@@ -56,9 +58,9 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 
 4. $(\alpha_{[A_1 \mapsto \alpha (G_1)]})_{[A_2 \mapsto \alpha (G_2)]}$
 
-   $= (\alpha_{[A_1 \mapsto 0]})_{[A_2 \mapsto _1]}$
+   $= (\alpha_{[A_1 \mapsto 0]})_{[A_2 \mapsto 1]}$
 
-   $= \alpha_{[A_1 \mapsto 0, A_2 \mapsto _1]}$
+   $= \alpha_{[A_1 \mapsto 0, A_2 \mapsto 1]}$
 
    $= [A_1 \mapsto 0, A_2 \mapsto 1, A_3 \mapsto 1]$
 
@@ -73,7 +75,7 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 
   Falls $F \neq A_1$ und $F \neq A_2$ dann $F_{[G_1/A_1, G_2/A_2]} := F$
 
-- Ist $F = \neg F_1$, dann $F_{[G_1/A_1, G_2/A_2]} = \neg F_{1[G_1/A_1,G_2/A_2]}$
+- Ist $F = \neg F_1$, dann $F_{[G_1/A_1, G_2/A_2]} := \neg F_{1[G_1/A_1,G_2/A_2]}$
 
 - Ist $F = F_1 \odot F_2$ eine zusammengesetzte Formel $(\odot \in \{\land, \lor, \rightarrow, \leftrightarrow, ...\})$ dann
 
@@ -91,7 +93,7 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 
   $= \alpha_{[A_1 \mapsto \alpha (G_1)]}(A_1)$
 
-  $\alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$
+  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$
 
   Falls $F = A_2$ dann
 
@@ -99,25 +101,25 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 
   $= \alpha_{[A_2 \mapsto \alpha (G_2)]}(A_2)$
 
-  $\alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$
+  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$
 
   Falls $F \neq A_1$ und $F \neq A_2$ dann
 
   $\alpha (F_{[G_1/A_1, G_2/A_2]}) = \alpha (F)$
 
-  $\alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$
+  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$
 
-- Ist $F = \neg F_1$, dann mit der Annahme: $\alpha(F_{1[G_1/A_1, G_2/A_2]}) = \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F)$ gilt:
+- Ist $F = \neg F_1$, dann mit der Annahme **(1)**: $\alpha(F_{1[G_1/A_1, G_2/A_2]}) = \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F_1)$ gilt:
 
-  $\alpha (F_{[G_1/A_1, G_2/A_2]}) = ! \alpha (F_{1[G_1/A_1, G_2/A_2]})$ **(1)**
+  $\alpha (F_{[G_1/A_1, G_2/A_2]}) = ! \alpha (F_{1[G_1/A_1, G_2/A_2]})$
 
-  $= ! \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto (G_2)] (F_1)}$
+  $= ! \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto (G_2)]} (F_1)$
 
-  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto (G_2)] (\neg F_1)}$
+  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto (G_2)]} (\neg F_1)$
 
-  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto (G_2)] (F)}$
+  $= \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto (G_2)]} (F)$
 
-- Ist $F = F_1 \odot F_2$ eine zusammengesetzte Formeln $(\odot \in \{\land, \lor, \rightarrow, \leftrightarrow, ...\})$ und $\alpha (F_{2[G_1/A_1, G_2/A_2]}) = \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F_2)$ und **(1)** gilt
+- Ist $F = F_1 \odot F_2$ eine zusammengesetzte Formeln $(\odot \in \{\land, \lor, \rightarrow, \leftrightarrow, ...\})$ und mit der Annahme $\alpha (F_{2[G_1/A_1, G_2/A_2]}) = \alpha_{[A_1 \mapsto \alpha (G_1), A_2 \mapsto \alpha (G_2)]} (F_2)$ und **(1)** gilt
 
   $\alpha (F_{[G_1/A_1, G_2/A_2]}) = \alpha (F_{1[G_1/A_1, G_2/A_2]} \odot F_{2[G_1/A_1, G_2/A_2]})$
 
@@ -130,28 +132,36 @@ genau dann wenn für alle passenden Belegungen $\alpha$ gilt $F$ ist allegemeing
 ## Aufgabe 4
 a. $ite(x,y,z) = (x \land y) \lor (\neg x \land z)$
 
-- $\neg$ Junktor: $\neg x = ite(x, \bot, \top) = (x \land \bot) \lor (\neg x \land \top)$
+- $\neg$ Junktor: $\neg x = ite(x, \bot, \top) = (x \land \bot) \lor (\neg x \land \top) = (\bot \lor \neg x) = \neg x$
 
-- $\lor$ Junktor: $x \lor y = \neg (\neg x \land \neg y)$
+- $\lor$ Junktor: $x \lor y = \top \land (x \lor y)$
 
-  $= ite((\neg x \land \neg y), \bot, \top)$
+  $= (x \lor \neg x) \land (x \lor y)$
 
-  $= ite(ite(\neg x, \neg y, \bot), \bot, \top)$
+  $= x \lor (\neg x \land y)$
 
-  $= ite(ite(ite(x, \bot, \top), ite(y, \bot, \top), \bot), \bot, \top)$
+  $= (x \land \top) \lor (\neg x \land y)$
 
-- $\rightarrow$ Junktor: $x \rightarrow y = \neg x \lor y = \neg (x \land \neg y)$
+  $= ite(x,\top,y)$
 
-  $= ite((x \land \neg y), \bot, \top)$
+- $\rightarrow$ Junktor: $x \rightarrow y = \neg x \lor y$
 
-  $= ite(ite(x, ite(y, \bot, \top), \bot), \bot, \top)$
+  $= \top \land (y \lor \neg x)$
+
+  $= (x \lor \neg x) \land (y \lor \neg x)$
+
+  $= (x \land y) \lor \neg x$
+
+  $= (x \land y) \lor (\neg x \land \top)$
+
+  $= ite(x,y,\top)$
 
 - $\leftrightarrow$ Junktor: $x \leftrightarrow y = (x \land y) \lor (\neg x \land \neg y)$
 
-  $= ite(x,y,\neg y)$
-b. Behauptung: $\lor, \land$ sind zeistellige monotone boolesche Funktionen
+  $= ite(x,y,ite(y,\bot,\top))$
+b. Behauptung: $\lor, \land$ sind zweistellige monotone boolesche Funktionen
 
-Beweis: $\forall a_1, a_2, b_1, b_2 \in \mathbb{B}: \forall i \in {1,2}:$ (durch $a_i \leq b_i \Rightarrow f(a_1,a_2) \leq f(b_1, b_2)$, Wahrheistabelle), also
+Beweis (durch Wahrheitstabelle): $\forall a_1, a_2, b_1, b_2 \in \mathbb{B}: \forall i \in \{1,2\}:$ $a_i \leq b_i \Rightarrow f(a_1,a_2) \leq f(b_1, b_2)$, also
 
 | $a_1$ | $a_2$ | $b_1$ | $b_2$ | $a_1 \lor a_2$ | $b_1 \lor b_2$ |
 |---|----|----|----|------|----|
@@ -167,9 +177,9 @@ Beweis: $\forall a_1, a_2, b_1, b_2 \in \mathbb{B}: \forall i \in {1,2}:$ (durch
 
 Aus der Eigenschaft, dass die Komposition von monotonen Funktionen wieder eine monotone Funktionen ist, können wir schließen, dass die Komposition von $\lor, \land, \bot, \top$ wieder eine monotone Funktion ist **(1)**
 
-Behauptung : $\neg$ ist keine monotone boolesche Funktion
+Behauptung : $\neg$ ist keine monotone boolesche Funktion **(2)**
 
-Beweis: (durch Wahrheistabelle) Für $\neg$ gilt $\forall a_1, b_1 \in \mathbb{B}: a_1 \neq b_1 \Rightarrow f(a_1) \geq f(a_2)$
+Beweis: (durch Wahrheitstabelle) Für $\neg$ gilt $\forall a_1, b_1 \in \mathbb{B}: a_1 \leq b_1 \Rightarrow f(a_1) \geq f(a_2)$
 
 | $a_1$ | $b_1$ | $\neg a_1$ | $\neg b_1$ |
 |-|-|-|-|

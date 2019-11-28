@@ -9,8 +9,6 @@ header-includes:
 
 ## Aufgabe 1
 
-Siehe näschte Seite
-
 ![](1a.png){width=100%}
 
 ![](1b.png){width=100%}
@@ -32,7 +30,6 @@ Siehe näschte Seite
 
 ![](45.png){width=100%}
 
-![](5c.png){width=100%}
-
 ![](a5b.png){width=100%}
 
+![](5c.png){width=100%}

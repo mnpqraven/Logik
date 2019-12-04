@@ -1,0 +1,57 @@
+---
+title: Uebungsblatt 07
+author: Truong (Hoang Tung Truong), Testfran (Minh Kien Nguyen), Hamdash
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb,diagbox,xcolor,tabto}
+---
+
+## Aufgabe 1
+a. Axiom 1 von Hilbert-Kakül
+b. Deduktionstheorem a
+c. Axiom 3 von Hilbert-Kakül
+d. Axiom 1 von Hilbert-Kakül
+e. Modus Ponens c, d
+f. Deduktionstheorem e
+g. Modus Ponens b, f
+h. Deduktionstheorem g
+
+## Aufgabe 2
+a. $\land$-Intro
+b. Axiom 1
+c. Modus Ponens a, b
+d. Axiom 2
+e. Modus Ponens e, d
+f. $\land$-R
+g. Modus Ponens e, f
+h. Axiom 2
+i. Modus Ponens, g, h
+j. $\land$-L
+k. Modus Ponens i, j
+
+## Aufgabe 3
+a. Zz: $\{\} \vdash \neg A \rightarrow (A \rightarrow B)$
+1. $\{\} \vdash \neg A \rightarrow (\neg B \rightarrow \neg A)$ \tab //Axiom 1
+2. $\{\neg A\} \vdash \neg B \rightarrow \neg A$  \tab //Deduktionstheorem 1
+3. $\{\} \vdash (\neg B \rightarrow \neg A) \rightarrow (A \rightarrow B)$ \tab //Axiom 3
+4. $\{\} \vdash ((\neg B \rightarrow \neg A) \rightarrow (A \rightarrow B)) \rightarrow \neg A \rightarrow ((\neg B \rightarrow \neg A) \rightarrow (A \rightarrow B))$ //Axiom 1
+5. $\{\} \vdash A \rightarrow ((\neg B \rightarrow \neg A) \rightarrow (A \rightarrow B))$ \tab //Modus Ponens 3, 4
+6. $\{\neg A\} \vdash (\neg B \rightarrow \neg A) \rightarrow (A \rightarrow B)$ \tab //Deduktionstheorem 5
+7. $\{\neg A\} \vdash A \rightarrow B$ \tab //Modus Ponens 2, 6
+8. $\vdash \neg A \rightarrow (A \rightarrow B)$ \tab //Deduktionstheorem 7
+
+b. Zz: $\vdash A \rightarrow ((A \rightarrow B) \rightarrow B)$
+
+1. $\{\} \vdash (A \rightarrow B) \rightarrow (A \rightarrow B)$ \tab //$\vdash A \rightarrow A$ bewiesen
+2. $\{\} \vdash ((A \rightarrow B) \rightarrow A \rightarrow B) \rightarrow ((A \rightarrow B) \rightarrow A) \rightarrow ((A \rightarrow B) \rightarrow B)$ //Axiom 2
+3. $\{\} \vdash ((A \rightarrow B) \rightarrow A) \rightarrow ((A \rightarrow B) \rightarrow B)$ \tab //Modus Ponens 1, 2
+4. $\{\} \vdash A \rightarrow ((A \rightarrow B) \rightarrow A)$ \tab //Axiom 1
+5. $\{A\} \vdash (A \rightarrow B) \rightarrow A$ \tab //Deduktionstheorem 4
+6. $\{A\} \vdash (A \rightarrow B) \rightarrow B$ $\Box$ \tab //Modus Ponens 3, 5
+7. $\{\} \vdash A \rightarrow ((A \rightarrow B) \rightarrow B)$ \tab //Deduktionstheorem 6
+
+## Aufgabe 4
+
+![](4a.png)
+
+![](4b.png)

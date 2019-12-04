@@ -1,0 +1,72 @@
+
+---
+title: Uebungsblatt 06
+author: Truong (Hoang Tung Truong, 3080216), Testfran (Minh Kien Nguyen, 3157116), Hamdash
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb}
+---
+
+## Aufgabe 1
+a. Seien $K = \{L_1, L_2, A_1, ... , A_n\}$ , $K' = \{\neg L_1, \neg L_2, B_1, ..., B_m\}$ $\lor$-Klauseln ($A_1, ..., A_n,B_1,...,B_m$ sind Literalen)
+
+Eine beliebige Resolvente $R$ von $K$ und $K'$ enthält stets darin die Literalen $L_i, \neg L_i$ wobei $i \in \{1,2\}$
+
+Da $L_i \lor \neg L_i \equiv T$ und $R$ eine $\lor$-Klausel ist, folgt daraus, $R$ ist stets allgemeingültig **(1)**
+
+Die Resolventenmethode soll die Nichterfüllbarkeit zeigen. Die Ausgangformel $F = K \land K'$  ist nicht erfüllbar, falls leere Klausel in der Resolventenmethode erzeugt wird. **(2)**
+
+Aus **(1)** und **(2)** $\Rightarrow$ Die Resolventenmethode braucht nie $K$ und $K'$ zu resolvieren, denn es ist nutzlos. $\Box$
+
+b. Nein, man kann $K$ oder $K'$ nicht entfernen.
+
+$F = \{K,K'\}$ erfüllt genau dann wenn jede Klausel $K,$ $K'$ erfüllt. Wenn man $K$ oder $K'$ entfernt, dann ändert sich die Erfüllbarkeit von F.
+
+Gegenbeispiel: Wenn man $K$ entfernt, sei $F'$ die entstandene Formel ($F' = K'$). Für die Belegung $\alpha$ mit $\alpha(A_1) = ... = \alpha(A_n) = \alpha(L_1) = \alpha(L_2) =0$ gilt $\alpha(F') = \alpha(K') =1$, aber $\alpha(F) = \alpha(K \land K') = \alpha(K)$ $\&$ $\alpha(K') =0$ $\&$ $1 = 0$, d.h $F'$ erfüllt, aber die ursprüngliche Formel $F$ erfüllt nicht.
+
+## Aufgabe 2
+$M = \{K_1, K_2,...,K_n\}$ erfüllt, wenn jede Klausel $K_1,K_2,...,K_n$ erfüllt. Da $K_2$ eine $\lor$-Klausel ist und $K_1$ die Klausel $K_2$ subsummiert, gilt es, wenn $K_1$ erfüllt, dann erfüllt auch $K_2$. Also $M$ erfüllt wenn $K_1,K_3,...,K_n$ (ohne $K_2$) erfüllen. D.h man kann $K_2$ aus $M$ entfernen, ohne die Erfüllbarkeit von $M$ zu verändern.
+
+
+## Aufgabe 5
+
+Behauptung: $\mathcal{F} = \{F_1, F_2, F_3, ... \}$ ist erfüllbar genau dann wenn $\forall n \geq 1: (\land^{n}_{i=1} F_i)$ ist erfüllbar.
+
+"$\Rightarrow$"-Beweis: $\mathcal{F} = \{F_1, F_2, F_3, ... \}$ ist erfüllbar
+
+$\Rightarrow \mathcal{F}$ besitzt ein Modell $\alpha$ ($\alpha \vDash \mathcal{F}$)
+
+$\Rightarrow \forall n \geq 1: \alpha(F_n) =1$ ($\forall n \geq 1: \alpha \vDash F_n$) //Definition von einem Modell eine Formelmenge
+
+$\Rightarrow \forall n \geq 1: \alpha(\land^{n}_{i=1} F_i) =1$ //$\alpha(F_1) =1$ $\&$ $\alpha(F_2) = 1 \Rightarrow \alpha(F_1 \land F_2) =1$
+
+$\Rightarrow \forall n \geq 1: (\land^{n}_{i=1} F_i)$ hat ein Modell $\alpha$, ist also erfüllbar.
+
+"$\Leftarrow$"-Beweis: $\forall n \geq 1: (\land^{n}_{i=1} F_i)$ ist erfüllbar
+
+$\Rightarrow \forall n \geq1: \exists \alpha_n: \alpha_n(\land^{n}_{i=1} F_i) = 1$ **(\*)**
+
+  Für $n=1$: $\exists \alpha_1: \alpha_1(F_1) =1 \Rightarrow {F_1}$ ist erfüllbar
+
+  Für $n=2$: $\exists \alpha_2: \alpha_2(F_1 \land F_2) =1 \Rightarrow \alpha_2 (F_1)$ $\&$ $\alpha_2 (F_2) =1 \Rightarrow \{F_1\}, \{F_2\}, \{F_1, F_2\}$ sind erfüllbar.
+
+  Für $n=3$: $\exists \alpha_3: \alpha_3(F_1 \land F_2 \land F_3) = 1$
+
+$\Rightarrow \alpha_3(F_1) = 1$ $\&$ $\alpha_3(F_2) = 1$ $\&$ $\alpha_3 (F_3) =1$
+
+
+$\Rightarrow \alpha_3(F_1 \land F_3) =1$ $\&$ $\alpha_3(F_2 \land F_3) =1$ $\&$ $\alpha_3(F_1 \land F_2) =1$
+
+$\Rightarrow \{F_1\}, \{F_2\}, \{F_3\}, \{F_1, F_2\}, \{F_1,F_3\}, \{F_2,F_3\}, \{F_1,F_2, F_3\}$ sind erfüllbar
+
+Allgemein gilt es:
+
+Sei $F_k = \{F_1, F_2, F_3, ... , F_k\}$ ($k \in \mathbb{N}$)
+
+Für $n = k$: $\exists \alpha_k$: $\alpha_k (\land^{k}_{i=1} F_i) =1$,
+
+$\Rightarrow \forall f \in \mathcal{P}(F_k)$ $\backslash$ $\emptyset$ (Potenzmenge von $F_k$ ohne die Leeremenge) gilt $\alpha_k(f) = 1$ (Jede endliche Teilmenge von $F_k$ ist erfüllbar)
+
+D.h aus **(\*)** folgt: Jede endliche Teilmenge von $\mathcal{F}$ ist erfüllbar.
+
+Nach dem Kompaktheissatz $\Rightarrow \mathcal{F}$ ist erfüllbar. $\Box$

@@ -1,0 +1,90 @@
+---
+title: Uebungsblatt 08
+author: Truong (Hoang Tung Truong), Testfran (Minh Kien Nguyen), Hamdash
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb,diagbox,xcolor,tabto}
+---
+
+## Aufgabe 1
+
+![](1.png)
+
+\pagebreak
+
+## Aufgabe 3
+a. $P \otimes Q := P \land \neg Q \lor \neg P \land Q$
+
+$\otimes-L: \frac{\triangle, P \vdash Q, \Gamma \quad \triangle, Q \vdash P, \Gamma}{\triangle, P \otimes Q \vdash \Gamma}$
+
+Begründung: Seien $\triangle, P \vdash Q, \Gamma$ und $\triangle, Q \vdash P, \Gamma$ gültig.
+
+Sei $\alpha$ eine passende Belegung mit $\hat{\alpha}(\triangle \land (P \otimes Q)) =1$
+
+Daraus folgt: $\hat{\alpha}(\triangle) =1$ und $\hat{\alpha}(P \otimes Q) =1$ und somit $\hat{\alpha}(P \land \neg Q)$ $|$ $\hat{\alpha}(\neg P \land Q) =1$
+
+Falls $\hat{\alpha}(P \land \neg Q)=1 \Leftrightarrow \hat{\alpha}(P) =1$ und $\hat{\alpha}(Q) =0$
+
+Aus Vsg: wenn $\hat{\alpha}(\triangle \land P) =1$ muss gelten $\hat{\alpha}(Q \lor \Gamma) =1$ und daher $\hat{\alpha}(\Gamma)=1$
+
+Falls $\hat{\alpha}(\neg P \land Q) =1 \Leftrightarrow \hat{\alpha}(P) =0$ und $\hat{\alpha}(Q) =1$
+
+Aus Vsg: wenn $\hat{\alpha}(\triangle \land Q) =1$ muss gelten $\hat{\alpha}(P \lor \Gamma) =1$ und daher $\hat{\alpha}(\Gamma)=1$
+
+$\otimes-R: \frac{\triangle \vdash P \land \neg Q, \neg P \land Q, \Gamma}{\triangle \vdash P \otimes Q, \Gamma}$
+Begründung: Sei $\triangle \vdash P \land \neg Q, \neg P \land Q, \Gamma$ gültig. Sei $\alpha$ eine passende Belegung mit $\hat{\alpha}(\triangle) =1$. Nach Voraussetzung muss es gelten:
+
+$\hat{\alpha}((P \land \neg Q) \lor (\neg P \land Q) \lor \Gamma) =1$ und somit $\hat{\alpha}(P \otimes Q \lor \Gamma)=1$
+
+b. $if$ $P$ $then$ $Q$ $else$ $R$ $:= P \land Q \lor \neg P \land R:= ite(P,Q,R)$
+
+ite-L: $\frac{\triangle,P,Q\vdash \Gamma \quad \triangle, R \vdash P, \Gamma}{\triangle, ite(P,Q,R) \vdash \Gamma}$
+
+Begründung: Seien $\triangle, P,Q \vdash \Gamma$ und $\triangle, R \vdash P,\Gamma$ gültig.
+
+Sei $\alpha$ eine passende Belegung mit $\hat{\alpha}(\triangle \land ite(P,Q,R)) =1$. Daraus folgt: $\hat{\alpha}(\triangle) =1$ und $\hat{\alpha}(ite(P,Q,R)) = \hat{\alpha}((P \land Q) \lor (\neg P \land R)) =1$ und somit $\hat{\alpha}(P \land Q)$ $|$ $\hat{\alpha}(\neg P \land R)= 1$
+
+Falls $\hat{\alpha}(P \land Q) =1$: Nach Voraussetzung gilt $\hat{\alpha}(\Gamma) =1$
+
+Falls $\hat{\alpha}(\neg P \land R) =1$: Aus Voraussetzung wenn $\hat{\alpha}(\triangle \land R) =1$ muss gelten $\hat{\alpha}(P \lor \Gamma) =1$ und daher $\hat{\alpha}(\Gamma) =1$
+
+$\Leftrightarrow \hat{\alpha}(P) =0$ und $\hat{\alpha}(R) =1$
+
+ite-R: $\frac{\triangle \vdash P \land Q, \neg P \land R, \Gamma}{\triangle \vdash ite(P,Q,R), \Gamma}$
+
+Begründung: Sei $\triangle \vdash P \land Q, \neg P \land R, \Gamma$ gültig. Sei $\alpha$  eine passende Belegung mit $\hat{\alpha}(\triangle) =1$. Nach Voraussetzung muss es gelten:  $\hat{\alpha}((P \land Q) \lor (\neg P \land R) \lor \Gamma) =1$ und daher $\hat{\alpha}(ite(P,Q,R) \lor \Gamma) =1$
+
+
+## Aufgabe 4
+
+Seien $\triangle \vdash \neg F_1, \Gamma$ und $\triangle, F_1 nplor F_2, Gamma$ gültig
+
+Sei $\alpha$ eine passende Belegung mit $\hat{\alpha}(\triangle) =1$. Nach Voraussetzung muss es gelten: $\hat{\alpha}(\neg F_1 \lor \Gamma) =1$ und $\hat{\alpha}(F_1 \lor F_2 \lor \Gamma) =1$
+
+Falls $\hat{\alpha}(\neg F_1) =1$, es gilt: $\hat{\alpha}(F_1)=0$ und da $\hat{\alpha}(F_1 \lor F_2 \lor \Gamma)=1$
+
+$\hat{\alpha}(F_2 \lor \Gamma) =1$
+
+Falls $\hat{\alpha}(\neg F_1) =0$, es gilt: $\hat{\alpha}(\Gamma)=1$, inbesondere (da $\hat{\alpha}(\neg F_1 \lor \Gamma)=1$)
+
+$\hat{\alpha}(F_2 \lor \Gamma) =1$
+
+Mit Hilfe der Regeln des Sequenzenkaküls folgt aus den Sequenzen $\triangle \vdash \neg F_1, \Gamma$ und $\triangle \vdash F_1 \lor F_2, \Gamma$ die folgende Sequenz:
+
+$\triangle \vdash \neg F_1 \land (F_1 \lor F_2), \Gamma$
+
+Aber $\neg F_1 \land (F_1 \lor F_2) \equiv \neg F_1 \land F_2 \not\equiv F_2$
+
+Deswegen ist die Regel nicht mit den anderen Regeln des Sequenzenkaküls herleitbar.
+
+## Aufgabe 5
+a.
+
+Grundterme: $h(c), f(c,d), h(h(d)), h(h(c)), h(d), f(f(c,d)), f(d,d)$
+
+Atomare Formeln: $R(c,c), R(c,d), R(d,d), S(c), S(d)$
+
+b. Siehe näschste Seite
+\pagebreak
+
+![](5.png)

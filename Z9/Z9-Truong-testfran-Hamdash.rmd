@@ -1,0 +1,65 @@
+---
+title: Uebungsblatt 09
+author: Truong (Hoang Tung Truong), Testfran (Minh Kien Nguyen), Hamdash
+output: pdf_document
+header-includes:
+   - \usepackage{amssymb,diagbox,xcolor,tabto}
+---
+
+## Aufgabe 1
+a. $\exists c.(c > 0 \land \exists n_0(\forall n(n \geq n_0 \rightarrow |f(n)| \leq c. |g(n)|)))$
+
+b. $\exists ! x.P(x) := x (P(x) \land \forall y.(P(y) \rightarrow x=y))$
+
+$\forall x.(\exists y.(G(x,y) \land \forall z.(G(x,z) \rightarrow y=z)))$
+
+## Aufgabe 2
+W<AE>hle $U = (\mathbb{N}, \{+^{\mathbb{N}}\},\{>^{\mathbb{N}}\})$
+
+Behauptung: $F_2$ gilt in U aber $F_1$ nicht: $(U \vDash F_2$ und $U \nvDash F_1)$
+
+In kurzformen dargestellt:
+
+$F_1 = \forall y \in \mathbb{N}. \exists x \in \mathbb{N}. x+x > y$
+
+$F_1 = \forall x \in \mathbb{N}. \forall y \in \mathbb{N}. x+x > y$
+
+Beweis: F<UE>r jede Belegung $\alpha$ ist
+
+$\hat{\alpha}(F_2) = min_{a \in \mathbb{N}} \hat{\alpha}_{[y \mapsto a]}(\exists x \in \mathbb{N}.x+x > y)$
+
+Wir betrachten:
+
+$\hat{\alpha}(\exists x \in \mathbb{N} . x+x > a)$ mit $a$ beliebig in $\mathbb{N}$:
+
+$\hat{\alpha}(\exists x \in \mathbb{N}. x+x>a)$
+
+$= max_{a' \in \mathbb{N} \hat{\alpha}_{[x \mapsto a']} (x+x > a)} = 1^{\mathbb{B}}$
+
+(da es sich immer ein $a' \in \mathbb{N}$ befindet, welches gr<OE>ser als $\frac{a}{2}$ ist, also $2a' > a$)
+
+$\Rightarrow \hat{\alpha}(F_2) = 1^{\mathbb{B}}$ f<UE>r jede Belegung $\alpha$
+
+$\Leftrightarrow U \vDash_\alpha F_2$ f<UE>r jede Belegung $\alpha$
+
+$\Leftrightarrow U \vDash F_2$
+
+Sei $\alpha$ eine beliebegi BElegung. Es gilt:
+
+$\hat{\alpha}(F_1) = max_{a \in \mathbb{N}} \hat{\alpha}_{[x \mapsto a]}(\forall y \in \mathbb{N}.x + x > y)$
+
+Wir betrachten $\hat{\alpha}(\forall y \in \mathbb{N}.a+a>y)$ mit $a$ beliebig in $\mathbb{N}$
+
+$\hat{\alpha}(\forall y \in \mathbb{N}.a+a>y)$
+
+$= min_{a' \in \mathbb{N}} \hat{\alpha}_{[y \mapsto a']}(a+a>y)$
+
+$=0$
+
+(wenn $a' = 3a$ bspw ist $\hat{\alpha}_{[y \mapsto 3a]} (a+a >y = 0^{\mathbb{B}})$)
+
+$\Rightarrow Es existier eine Belegung \alpha sodass \hat{\alpha}(F_1) = 0^{\mathbb{B}}$ (Tats<AE>chlich gilt dies f<UE> jede Belegund $\alpha$)
+
+$\Leftrightarrow U \nvDash F_1$
+
+## Aufgabe 3

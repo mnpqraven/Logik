@@ -10,7 +10,9 @@ header-includes:
 
 ![](1.png)
 
-\pagebreak
+## Aufgabe 2
+
+![](2.png)
 
 ## Aufgabe 3
 a. $P \otimes Q := P \land \neg Q \lor \neg P \land Q$
@@ -60,7 +62,7 @@ Begründung: Sei $\triangle \vdash P \land Q, \neg P \land R, \Gamma$ gültig. S
 
 ## Aufgabe 4
 
-Seien $\triangle \vdash \neg F_1, \Gamma$ und $\triangle, F_1 \lor F_2, Gamma$ gültig
+Seien $\triangle \vdash \neg F_1, \Gamma$ und $\triangle, F_1 \lor F_2, \Gamma$ gültig
 
 Sei $\alpha$ eine passende Belegung mit $\hat{\alpha}(\triangle) =1$. Nach Voraussetzung muss es gelten: $\hat{\alpha}(\neg F_1 \lor \Gamma) =1$ und $\hat{\alpha}(F_1 \lor F_2 \lor \Gamma) =1$
 

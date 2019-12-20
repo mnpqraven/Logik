@@ -63,3 +63,153 @@ $\Rightarrow Es existier eine Belegung \alpha sodass \hat{\alpha}(F_1) = 0^{\mat
 $\Leftrightarrow U \nvDash F_1$
 
 ## Aufgabe 3
+a. $\hat{\alpha}(F)$
+
+$= \hat{\alpha}((((x.y)+1)\leq x+y \rightarrow x \leq y))$
+
+$! \hat{\alpha}(((x.y)+1) \leq x+y) \| \hat{\alpha}(x\leq y)$ // Formelsemantik f<UE>r $\rightarrow-Formel$
+
+Es gilt: $\hat{\alpha}(((x.y) +1) \leq x+y)$
+
+$\Leftrightarrow (\hat{\alpha}((x.y)+1), \hat{\alpha}(x+y)) \in \leq^{\mathbb{R}}$ // Formelsemantik f<UE> atomare Formel $\mathbb{R}$
+
+$\Leftrightarrow (\hat{\alpha}(x.y) +^{\mathbb{R}} \hat{\alpha}(1), \hat{\alpha}(x) +^{\mathbb{R}} \hat{\alpha}(y)) \in \leq^{\mathbb{R}}$ // Termsemantik f<UE> Funktionzeichnen
+
+$\Leftrightarrow ((\hat{\alpha}(x).^{mathbb{R}} \alpha(y)) +^{\mathbb{R}} 1^{mathbb{R}}, \alpha (x) +^{mathbb{R}} \hat{\alpha} (y)) \in \leq^{\mathbb{R}}$ // Termsemantik f<UE> Funktionzeichnen
+
+$((\alpha(x).^{\mathbb{R}} \alpha(y)) +^{mathbb{R}} 1^{\mathbb{R}}, \alpha(x) +^{\mathbb{R}} \alpha(y)) \in \leq^{\mathbb{R}}$ // Termsemantik f<UE>r Variablen und Konstanten
+
+$\Leftrightarrow ((3.2)+1, 3+2) \in \leq^{\mathbb{R}}$ // $\alpha(x) =3, \alpha(y) =2$
+
+$\Leftrightarrow (7,5) \in \leq^{\mathbb{R}}$ // Berechnung der Werte
+Aber $(7,5) \notin \leq^{\mathbb{R}} (da 7>5)$
+
+$\Rightarrow \hat{\alpha}(((x.y) +1) \leq x +y) = 0^{\mathbb{B}}$
+
+Es gilt $\hat{\alpha}(x \leq y)$
+$\Leftrightarrow (\hat{\alpha}(x), \hat{\alpha}(y)) \in \leq^{\mathbb{R}}$ // Formelsemantik f<UE>r atomare Folrmeln mit Relation
+
+$\Leftrightarrow (\alpha(x), \alpha(y)) \in \leq^{\mathbb{R}}$ // Termsemantik f<UE> Variablen
+
+$\Leftrightarrow (3,2) \in \leq^{\mathbb{R}}$ // $\alpha (x) =3, \alpha (y) =2$
+
+Aber $(3,2) \notin \leq^{\mathbb{R}}$ (da $3>2$)
+
+$\Rightarrow \hat{\alpha}(x \leq y) =0^{\mathbb{B}}$
+
+$\Rightarrow \hat{\alpha}(F) = !0^{\mathbb{B}} \| 0^{\mathbb{B}} = 1^{\mathbb{B}} \| 0^{\mathbb{B}} =1^{\mathbb{B}}$
+
+b. $F = (((x \land y) \lor 1) \leq x \lor y \rightarrow x \leq y)$
+
+$= (1 \leq x \lor y \rightarrow x \leq y)$
+
+$b \vDash_{\alpha} F$ gdw. $\hat{\alpha}(F) =1^{\mathbb{B}}$
+
+$\hat{\alpha}(F) =\hat{\alpha}((1\leq x\lor y \rightarrow x \leq y))$
+
+$= !\hat{\alpha}(1 \leq x \lor y) \| \hat{\alpha}(x \leq y)$
+
+Es gilt $\hat{\alpha}(1 \leq x\lor y)$
+
+$\Leftrightarrow (\hat{\alpha}(1), \hat{\alpha}(x\lor y)) \in \leq^{\mathbb{B}}$
+
+$\Leftrightarrow (\hat{\alpha}(1), \hat{\alpha}(x) \| \hat{\alpha}(y)) \in \leq^{\mathbb{B}}$
+
+$\Leftrightarrow (1^{\mathbb{B}}, \hat{\alpha}(x) \| \hat{\alpha}(y)) \in \leq^{\mathbb{B}}$
+
+Es gilt $\hat{\alpha}(x \leq y)$
+
+$\Leftrightarrow (\hat{\alpha}(x), \hat{\alpha}(y)) \in \leq^{\mathbb{B}}$
+
+$\Leftrightarrow (\alpha(x), \alpha(y)) \in \leq^{\mathbb{B}}$
+
+Fallunterscheidug: (um $\hat{\alpha}(F) = 1^{\mathbb{B}}$ erreichen zu k<OE>nnen)
+
+1. Fall: $\hat{\alpha}(1 \leq x \lor y) = 0^{\mathbb{B}}$ und $\hat{\alpha}(x \leq y) = 0^{\mathbb{B}}$ (dabei gilt $\hat{\alpha}(F) = ! 0 \| 0 = 1 \| 0 =1$)
+
+$\hat{\alpha}(1 \leq x \lor y) = 0^{\mathbb{B}}$
+
+gdw $\alpha(x) \| \alpha(y) = 0^{\mathbb{B}}$ (da $(1,0) \notin \leq^{\mathbb{B}}$)
+
+gdw $\alpha(x) =0^{\mathbb{B}}$ und $\alpha(y) =0^{\mathbb{B}}$ **(\*)**
+
+$\hat{\alpha}(x \leq y) =0^{\mathbb{B}}$
+
+gdw $\alpha(x) =1^{\mathbb{B}} und \alpha(y) =0^{\mathbb{B}}$
+
+ da $\alpha(x)$ nur einen Wahrheitswert aufnehmen kannst, verwerfe Fall 1
+
+ Fall 2: $\hat{\alpha}(1 \leq x \lor y) =1^{\mathbb{B}}$ und $\hat{\alpha}(x \leq y) = 1^{\mathbb{B}}$ (dabei gilt $\hat{\alpha}(F) = !1 \| 1 = 0 \| 1 = 1$)
+
+$\hat{\alpha}(1 \leq x \lor y)=1^{\mathbb{B}}$
+
+gdw $\alpha(x) \| \alpha(y) =1^{\mathbb{B}}$
+
+gdw $\alpha(x) =1^{\mathbb{B}}$ oder $\alpha(y) =1^{\mathbb{B}}$
+
+$\hat{\alpha}(x \leq y) =1^{\mathbb{B}}$
+
+gdw $\alpha(x) =0^{\mathbb{B}}$ oder $\alpha(y) =1^{\mathbb{B}}$ **(\*\*)**
+
+Also Fall 2 passiert gdw $\alpha(y) =1^{\mathbb{B}}$
+
+Fall 3 $\hat{\alpha}(1 \leq x \lor y) =0^{\mathbb{B}}$ und $\hat{\alpha}(x \leq y) =1^{\mathbb{B}}$ (dabei gilt $\hat{\alpha}(F) = !0 \| 1 = 1 \| 1 = 1$) aus **(\*)** und **(\*\*)**
+
+Die gesuchten Belegungen sind also
+
+$\alpha_1$ mit $\alpha_1(x) =0^{\mathbb{B}}, \alpha_1(y)=1^{\mathbb{B}}$
+
+$\alpha_2$ mit $\alpha_2(x) =0^{\mathbb{B}}, \alpha_2(y)=0^{\mathbb{B}}$
+
+$\alpha_3$ mit $\alpha_3(x) =1^{\mathbb{B}}, \alpha_3(y)=1^{\mathbb{B}}$
+
+## Aufgabe 4
+a. $\hat{\alpha}(\exists x. x+x =y)$
+
+$=max_{a\in \mathbb{N}} \hat{\alpha}_{[x \mapsto a]}(x + x = y)$ //Formelsemantik f<UE>r Formel mit quantor $\exists$
+
+$=max_{a\in \mathbb{N}} \hat{\alpha}(a+a=y)$ // Modifikation von Belegung $a \in \mathbb{N}$
+
+Es gilt:
+
+$\hat{\alpha}(a+a=y) \Leftrightarrow (\hat{\alpha}(a+a), \hat{\alpha}(y)) \in =^{\mathbb{N}}$ // Formelsemantik f<UE> atomare Formel mit Relation
+
+$\Leftrightarrow (\alpha(a) +^{\mathbb{N}} \alpha(a), \alpha(y)) \in =^{\mathbb{N}}$ // Termsemantik f<UE> Variablen und Konstanten
+
+$\Leftrightarrow (a +a, 2) \in =^{\mathbb{N}}$ // $\alpha(y) =2$
+
+F<UE>r $a=1\in \mathbb{N}$ ist $(a+a,2) \in =^{\mathbb{N}}$ wahr
+
+$\Rightarrow \hat{\alpha}(\exists x.x+x =y) =1^{\mathbb{B}}$
+
+b. Sei $U = (A,\mathcal{F}, \mathcal{R})$
+
+$U \vDash_{\alpha}\exists x.\exists y .F)$
+
+$\Leftrightarrow$ F<UE>r mindesten ein $a \in A$ gilt
+
+$U \vDash_{\alpha[x\mapsto a]} (\exists y.F)$
+
+$\Leftrightarrow$ F<UE>r mindestens ein $a \in A$ und ein $a' \in A$ gilt
+
+$U \vDash_{\alpha[x\mapsto a, y \mapsto a']} (F)$
+
+$\Leftrightarrow$ F<UE>r mindestens ein $a \in A$ gilt
+
+$U \vDash_{\alpha[y \mapsto a']} (\exists x.F)$
+
+$\Leftrightarrow U \vDash \exists y . \exists x . F$
+
+c. Sei $U = (A,\mathcal{F}, \mathcal{R})$
+
+$U \vDash_{\alpha} \exists x. \forall x. F$
+
+$\Leftrightarrow$ F<UE>r mindestens ein $a \in A$ gilt
+
+$U \vDash_{\alpha[x\mapsto a]}(\forall x.F)$
+
+$\Leftrightarrow$ F<UE>r mindestens ein $a \in A$ gilt
+
+$\hat{\alpha}_{[x\mapsto a]}(\forall x.F) =1^{\mathbb{B}}$
+
+$\Leftrightarrow \hat{\alpha}(\forall x.F) =1^{\mathbb{B}} \Leftrightarrow U \vDash_{\alpha} \forall x.F$ (da Belegungen nur von freien Variablen abh<AE>ngig sind)
